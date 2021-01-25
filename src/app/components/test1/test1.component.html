@@ -1,0 +1,6 @@
+<input type="text" ref-studentInput>
+<button (click)="addStudent(studentInput.value); studentInput.value =''">Add student</button>
+
+<ul>
+  <li *ngFor="let st of students; let x=index">{{x + 1}} - {{st}}</li>
+</ul>

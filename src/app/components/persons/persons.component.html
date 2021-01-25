@@ -1,0 +1,5 @@
+<h1>Persons</h1>
+<div *ngFor="let p of persons">
+  {{p.id}} -- {{p.name}}
+</div>
+<div *ngIf="errorMessage.length > 0">{{errorMessage}}</div>

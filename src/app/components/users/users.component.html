@@ -1,0 +1,28 @@
+<div>
+  Name: <input type="text" #name>
+</div>
+<div>
+  Role: <input type="text" #role>
+</div>
+<button (click)="addUser(name.value, role.value); name.value=''; role.value=''">Add</button>
+<hr>
+
+<table border="1" *ngIf="users.length > 0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of users">
+      <td>{{u.name}}</td>
+      <td>
+        <button *ngIf="u.role === 'admin' else googleLink">Admin button</button>
+        <ng-template #googleLink>
+          <a href="http://www.google.com">Goolge</a>
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>

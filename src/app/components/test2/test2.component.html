@@ -1,0 +1,45 @@
+<!--
+  <div class="bad" [hidden]="result!=='positive'">
+    positive
+  </div>
+  <div class="good" [hidden]="result!=='negative'">
+    negative
+  </div>
+  <div class="unknown" [hidden]="result!=='unknown'">
+    unknown
+  </div>
+  
+  <div class="bad" *ngIf="result==='positive' && !isValid">
+    positive
+  </div>
+  <div class="good" *ngIf="result==='negative' && isValid">
+    negative
+  </div>
+-->
+
+<!--
+  <div class="bad" *ngIf="result==='positive' else otherDiv">
+    positive
+  </div>
+  
+  <ng-template #otherDiv>
+    <div class="good">
+      negative
+    </div>
+  </ng-template>
+-->
+
+<!--
+      switch (this.result) {
+      case "negative": do1() break;
+      case "positive": do2() break;
+      default: do3()
+    }
+-->
+
+<div [ngSwitch]="result">
+    <div *ngSwitchCase="'positive'">Bad</div>
+    <div *ngSwitchCase="'negative'">Good</div>
+    <div *ngSwitchDefault>Un-known</div>
+</div>
+
